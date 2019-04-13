@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>JavaScript | DragDrop</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <form name="quiz">
+      <div class="questionBx">
+        <p>The last letter of the greek alphabet is:</p>
+        <div class="answers">
+          <div>
+            <input type="radio" value="Omega" name="q1" id="ans">Omega<br>
+          </div>
+          <div>
+            <input type="radio" name="q1" value="Bravo" id="ans">Bravo<br>
+          </div>
+          <div>
+            <input type="radio" name="q1" id="ans" value="Alpha">Alpha<br>
+          </div>
+          <div>
+            <input value="Charlie" type="radio" name="q1" id="ans">Charlie<br>
+          </div>
+        </div>
+      </div>
+      <div class="questionBx">
+        <p>How many computer languages are in use?</p>
+        <div class="answers">
+          <div>
+            <input type="radio" value="1000" name="q2" id="ans">1000<br>
+          </div>
+          <div>
+            <input type="radio" name="q2" value="2000" id="ans">2000<br>
+          </div>
+          <div>
+            <input type="radio" name="q2" id="ans" value="2500">2500<br>
+          </div>
+          <div>
+            <input value="3000" type="radio" name="q2" id="ans">3000<br>
+          </div>
+        </div>
+      </div>
+      <div class="questionBx">
+        <p>In which country did manga originate?</p>
+        <div class="answers">
+          <div>
+            <input type="radio" value="America" name="q2" id="ans">America<br>
+          </div>
+          <div>
+            <input type="radio" name="q2" value="China" id="ans">China<br>
+          </div>
+          <div>
+            <input type="radio" name="q2" id="ans" value="India">India<br>
+          </div>
+          <div>
+            <input value="Japan" type="radio" name="q2" id="ans">Japan<br>
+          </div>
+        </div>
+      </div>
+    </form>
+    <input type="button" value="Submit" id="submit" onclick="result()">
+    <div id="result">
+
+    </div>
+  </div>
+
+
+  <script>
+    function result(e) {
+
+      var q1 = document.quiz.q1.value;
+      var q2 = document.quiz.q1.value;
+      var q3 = document.quiz.q1.value;
+      var result = document.getElementById("result");
+      var score = 0;
+      var display = ["Need Improvement", "Good Work", "Great!!"];
+      if (q1 == "Omega") {
+        score++;
+      }
+      if (q2 == "2000") {
+        score++;
+      }
+      if (q3 == "Japan") {
+        score++
+      }
+      result.innerHTML = `
+      <p class="show"><b>Marks:</b>${score}/3</p>
+      <p class="show"><b>Teacher's Remarks:</b>${display[score]}</p>
+      `;
+
+    }
+  </script>
+</body>
+
+</html>
