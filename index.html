@@ -52,16 +52,16 @@
         <p>In which country did manga originate?</p>
         <div class="answers">
           <div>
-            <input type="radio" value="America" name="q2" id="ans">America<br>
+            <input type="radio" value="America" name="q3" id="ans">America<br>
           </div>
           <div>
-            <input type="radio" name="q2" value="China" id="ans">China<br>
+            <input type="radio" name="q3" value="China" id="ans">China<br>
           </div>
           <div>
-            <input type="radio" name="q2" id="ans" value="India">India<br>
+            <input type="radio" name="q3" id="ans" value="India">India<br>
           </div>
           <div>
-            <input value="Japan" type="radio" name="q2" id="ans">Japan<br>
+            <input value="Japan" type="radio" name="q3" id="ans">Japan<br>
           </div>
         </div>
       </div>
@@ -77,11 +77,12 @@
     function result(e) {
 
       var q1 = document.quiz.q1.value;
-      var q2 = document.quiz.q1.value;
-      var q3 = document.quiz.q1.value;
+      var q2 = document.quiz.q2.value;
+      var q3 = document.quiz.q3.value;
       var result = document.getElementById("result");
       var score = 0;
-      var display = ["Need Improvement", "Good Work", "Great!!"];
+      var range = 0;
+      var display = ["Need Improvement", "Good Work", "Excellent"];
       if (q1 == "Omega") {
         score++;
       }
@@ -91,9 +92,18 @@
       if (q3 == "Japan") {
         score++
       }
+      if (score >= 0 && score <= 1) {
+        range = 0;
+      }
+      if (score > 1 && score <= 2) {
+        range = 1;
+      }
+      if (score > 2 && score <= 3) {
+        range = 2;
+      }
       result.innerHTML = `
       <p class="show"><b>Marks:</b>${score}/3</p>
-      <p class="show"><b>Teacher's Remarks:</b>${display[score]}</p>
+      <p class="show"><b>Teacher's Remarks:</b>${display[range]}</p>
       `;
 
     }
