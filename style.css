@@ -39,6 +39,7 @@ body {
 }
 .answers {
   color: #c0c0c0 !important;
+  font-size:14px;
 }
 .show {
   color: #d3d3d3 !important;
